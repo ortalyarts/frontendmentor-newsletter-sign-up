@@ -1,0 +1,240 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul {
+  margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  /* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+img {
+  vertical-align: middle;
+}
+/* General STYLE */
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto bold';
+  src: url('./assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
+       url('./assets/fonts/roboto-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: bold;
+}
+
+:root {
+    --color1: hsl(234, 29%, 20%);
+    --color2:hsl(235, 18%, 26%);
+    --color3: hsl(231, 7%, 60%);
+    --color4: hsl(4, 100%, 67%);
+        
+    --gradient1: linear-gradient(136deg, #ffffff, #fff1f1);
+
+    --ffparagraph: "Roboto", sans-serif;
+    --fftitle: "Roboto bold", sans-serif;
+
+    --fsparagraph: 1rem;
+}
+body {
+    padding:0 1.5rem;
+    font-family: var(--ffparagraph);
+    text-rendering: optimizeSpeed;
+    text-align:left; 
+    /* to stick the footer to the bottom */
+    min-height: 100vh;  
+    display:flex; flex-direction:column; 
+}
+h1, h2, h3, ul {
+    padding:0;
+}
+.hide {
+  display:none;
+}
+main {
+    max-width: 23.438rem;
+    margin:auto;
+    display:grid;
+    text-align:center;
+    background:white;
+    border-radius: 2.2rem;;
+}
+.illustration-holder {
+  width:100%;
+  height:20rem;
+  background:url(./assets/images/illustration-sign-up-mobile.svg) no-repeat;
+}
+.content-holder {
+  max-width:23.5rem;
+  justify-self: center;
+  padding:1.625rem;
+  text-align:left;
+}
+h1 {
+  font-size:1.8rem;
+  line-height:2.5rem;
+  color: var(--color1);
+  font-family:var(--fftitle);
+
+}
+ul#our-advantages {
+  margin:1.8rem 0 1rem 0;
+}
+ul#our-advantages li{
+  list-style: none;
+  padding:0rem 0 0.8rem 2.2rem;
+  background:url(./assets/images/icon-list.svg) no-repeat left 0.1rem;
+}
+
+.btn-dismiss, .btn-subscribe {
+  background:linear-gradient(140deg,#232742, #232742, #ff537b, #ff6938 );
+  background-size: 300%;
+  background-position: left;
+  transition: 0.5s;
+  padding: 1.1rem 0;
+  border-radius:0.5rem;
+  color:white;
+  outline:none;
+  border:none;
+  text-align:center;
+  font-size:1rem;
+  margin:0;
+  cursor:pointer;
+}
+.btn-dismiss:hover, .btn-subscribe:hover {
+  background-position: right;
+  box-shadow:0 0.5rem 1rem 0.2rem #ffbeb8;
+}
+.form-holder {
+  display:grid;
+  margin-top:1.8rem;
+}
+label { 
+  display:inline;
+  font-size:0.7rem;
+  color: var(--color1);
+  font-family:var(--fftitle);
+}
+.form-holder input{
+  border-radius:0.5rem;
+  border: 1px solid var(--color3);
+  font-size:1rem;
+  font-weight:600;
+  color: var(--color1);
+  padding:1.1rem 1.3rem;
+  margin:0.5rem 0 1.5rem 0;
+  width:100%;
+}
+.form-holderinput:focus, .form-holder input:active { 
+  border-color: var(--color4) !important;
+  outline: none;
+}
+
+::placeholder {
+  color: var(--color3);
+  opacity: 0.7; /* Firefox */
+}
+
+/* Invalid message */
+.input-invalid { 
+  border: 1px solid var(--color4) !important;
+  color:var(--color4) !important;
+  background:#ffe8e6;
+}
+.invalid-message, .email-invalid-message {
+  display:none;
+  float:right;
+}
+.activeMessage {
+  display:inline !important;
+}
+.invalid-message p, .email-invalid-message p {
+  color: var(--color4);
+  font-size: 0.7rem;
+  text-align: right;
+  font-family:var(--fftitle);
+}
+/* End of Invalid message */
+
+/* Success message */
+.success-message-container {
+  margin:auto;
+}
+.success-message {
+    max-width: 23.438rem;
+    display:grid;
+    gap:2.75rem;
+    text-align:left;
+    background:white;
+    padding:4.125rem;
+}
+.success-message h2 {
+  font-size:2rem;
+  line-height:3.5rem;
+  font-family:var(--fftitle);
+}
+#userEmail {
+  font-family:var(--fftitle);
+}
+
+footer p { font-size: 11px; text-align: center; color: var(--color3); }
+footer p a { color: var(--color3); }
+
+
+@media screen and (min-width:55rem) {
+  body {
+    padding:0 2rem; 
+    background: var(--color1);
+  }
+  main {
+    max-width: 58rem;
+    grid-template-columns: 1.2fr 1fr;
+    
+    align-items: center;
+    gap:1.75rem;
+    text-align:left;
+    padding:1.5rem;
+  }
+  .content-holder {
+    padding:0;
+  }
+  .imgPlaceHolderMobile {
+    display:none;
+  }
+  .hero-image-holder{
+    text-align:right;
+  }
+  h1 {
+    font-size:3.5rem;
+    line-height:3.5rem;
+    margin:0rem 0 1.7rem 0;
+  }
+
+  .input-holder input {
+    padding:1.02rem 2rem;
+  }
+  .success-message {
+    max-width: 31.625rem;
+    display:grid;
+    gap:2.75rem;
+    text-align:left;
+    background:white;
+    padding:4.125rem;
+    border-radius: 2.6rem;;
+}
+
+}
