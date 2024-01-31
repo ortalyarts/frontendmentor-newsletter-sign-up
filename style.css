@@ -27,14 +27,14 @@ img {
   src: url('./assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
        url('./assets/fonts/roboto-regular-webfont.woff') format('woff');
   font-weight: normal;
-  font-style: normal;
+  font-display: swap; /*temporarily show a system font to avoid showing invisible text while custom fonts load*/
 }
 @font-face {
   font-family: 'Roboto bold';
   src: url('./assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
        url('./assets/fonts/roboto-bold-webfont.woff') format('woff');
   font-weight: bold;
-  font-style: bold;
+  font-display: swap;
 }
 
 :root {
