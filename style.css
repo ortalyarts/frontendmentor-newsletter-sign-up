@@ -51,7 +51,7 @@ img {
     --fsparagraph: 1rem;
 }
 body {
-    padding:0 1.5rem;
+    padding:0;
     font-family: var(--ffparagraph);
     text-rendering: optimizeSpeed;
     text-align:left; 
@@ -67,7 +67,7 @@ h1, h2, h3, ul {
 }
 main {
     max-width: 23.438rem;
-    margin:auto;
+    margin:0 auto;
     display:grid;
     text-align:center;
     background:white;
@@ -201,6 +201,7 @@ footer p a { color: var(--color3); }
     background: var(--color1);
   }
   main {
+    margin:auto;
     max-width: 58rem;
     grid-template-columns: 1.2fr 1fr;
     
